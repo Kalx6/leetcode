@@ -19,7 +19,7 @@ class Solution:
 
         
         
-        return target_index_list
+    
 
 
         
