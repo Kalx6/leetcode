@@ -1,0 +1,20 @@
+class Solution:
+    def isCovered(self, ranges: List[List[int]], left: int, right: int) -> bool:
+
+        integers = set()
+
+        for b, c in ranges:
+            integers.update(list(range(b,c + 1)))
+
+       
+        set_left_right = set(range(left,right+1))
+
+        a = set_left_right - integers
+
+        if len(set_left_right) > 50:
+            return False
+
+        if len(a) != 0:
+            return False
+        else:
+            return True
