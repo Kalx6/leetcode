@@ -1,0 +1,15 @@
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        for i in range(len(digits)):
+            digits[i] = str(digits[i])
+        plus_str = ''.join(digits)
+
+        plus_int = int(plus_str) + 1
+
+        new_list = list(str(plus_int))
+
+        for i in range(len(new_list)):
+            new_list[i] = int(new_list[i])
+        
+
+        return new_list
