@@ -1,0 +1,16 @@
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        from collections import Counter
+
+        new_dict = Counter(nums)
+
+        count = 0
+
+        for i,j in new_dict.items():
+            if j >= 2:
+                count += 1
+
+        if count >= 1:
+            return True
+        else:
+            return False
