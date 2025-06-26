@@ -1,0 +1,26 @@
+class Solution:
+    def findWords(self, words: List[str]) -> List[str]:
+
+        import copy
+
+        row1 = list(set("qwertyuiop"))
+
+        row2 = list(set("asdfghjkl"))
+
+        row3 = list(set("zxcvbnm"))
+
+        ret = []
+
+        for i in words:
+            copy_of_i = copy.deepcopy(i)
+            copy_of_i = set(list(copy_of_i.lower()))
+
+            if copy_of_i.issubset(row1):
+                ret.append(i)
+            elif copy_of_i.issubset(row2):
+                ret.append(i)
+            elif -copy_of_i.issubset(row3):
+                ret.append(i)
+          
+
+        return ret
