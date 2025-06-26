@@ -1,0 +1,21 @@
+class Solution:
+    def findRelativeRanks(self, score: List[int]) -> List[str]:
+
+        import copy
+
+        ret = [0]*len(score)
+
+        copy_of_score = copy.deepcopy(score)
+
+        copy_of_score.sort(reverse=True)
+
+        for i in range(len(score)):
+            if i == 0:
+                ret[score.index(copy_of_score[i])] = "Gold Medal"
+            elif i == 1:
+                  ret[score.index(copy_of_score[i])] = "Silver Medal"
+            elif i == 2:
+                 ret[score.index(copy_of_score[i])] = "Bronze Medal"
+            else:
+                 ret[score.index(copy_of_score[i])] = str(i+1)
+        return ret
