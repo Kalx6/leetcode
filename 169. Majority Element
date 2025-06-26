@@ -1,0 +1,16 @@
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+       
+
+            from collections import Counter
+
+            new_dict = Counter(nums)
+
+            max_list = []
+
+            for i,j in new_dict.items():
+                max_list.append(j)
+
+            for i,j in new_dict.items():
+                if j == max(max_list):
+                    return i
