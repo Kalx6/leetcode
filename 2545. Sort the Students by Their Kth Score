@@ -1,0 +1,15 @@
+class Solution:
+    def sortTheStudents(self, score: List[List[int]], k: int) -> List[List[int]]:
+
+        score_store = []
+
+        ret = [0]*len(score)
+        for i in range(len(score)):
+            score_store.append(score[i][k])
+        score_store.sort(reverse=True)
+
+        for i in range(len(score)):
+            for  k in score_store:
+                    if k in score[i]:
+                        ret[score_store.index(k)] = score[i]
+        return ret
