@@ -1,0 +1,11 @@
+class Solution:
+    def arrayPairSum(self, nums: List[int]) -> int:
+        nums.sort()
+
+        ret = 0
+
+        a = len(nums)
+
+        for i in range(0,a,2):
+            ret += min(nums[i:i+2])
+        return ret
