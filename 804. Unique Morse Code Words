@@ -1,0 +1,15 @@
+class Solution:
+    def uniqueMorseRepresentations(self, words: List[str]) -> int:
+        import string
+
+        alphabet = list(string.ascii_lowercase)
+
+        morse_code = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+        ret = []
+        for i in range(len(words)):
+            words[i] = list(words[i])
+            for j in range(len(words[i])):
+                words[i][j] = morse_code[alphabet.index(words[i][j])]
+            words[i] = ''.join(words[i])
+                
+        return len(set(words))
