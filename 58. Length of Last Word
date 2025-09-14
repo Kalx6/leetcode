@@ -1,0 +1,37 @@
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        index_array = []
+        lf = 0
+        while lf != len(s):
+            if s[lf] == " ":
+                index_array.append(lf)
+            lf += 1
+        print(len(s),index_array)
+        index_array.reverse()
+        if len(index_array)>=1:
+            for i in range(len(index_array)-1):
+                if s[len(s)-1] ==" ":
+                    if index_array[i] - index_array[i+1] > 1:
+                        return index_array[i] - index_array[i+1] - 1
+                        break
+                elif s[len(s)-1] != " ":
+                    return (len(s)-1) - index_array[i]
+                    break
+            else:
+                 if len(s.strip()) == 1:
+                    if index_array[0] == 0:
+                        return 1
+                    else:
+                        return len(s)-index_array[0]
+                 else:
+                    if len(index_array) >= 2 and set(index_array) == set(range(min(index_array),max(index_array)+1)):
+                        return index_array[-1]
+                    else:
+                        return len(s) - index_array[0] - 1
+        else:
+            return len(s)
+     
+    
+
+
+        
