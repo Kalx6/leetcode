@@ -1,0 +1,15 @@
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        no_space = s.replace(" ","")
+
+        no_alphanumric = [x.lower() for x in s if x.isalnum()]
+        
+        list_alphanumric = no_alphanumric[::-1]
+
+        if no_alphanumric == list_alphanumric:
+            return True
+        else:
+            return False
+
+        
+        
