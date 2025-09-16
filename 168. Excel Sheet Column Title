@@ -1,0 +1,33 @@
+class Solution:
+    def convertToTitle(self, columnNumber: int) -> str:
+        alpha_bets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 
+                        'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 
+                        'U', 'V', 'W', 'X', 'Y', 'Z']
+        flag = True
+
+        alpha_no = []
+
+        alpha = []
+
+        while flag:
+            a = (columnNumber-1) % 26
+
+            alpha_no.append(a)
+
+            columnNumber = (columnNumber-1) // 26
+
+            if columnNumber == 0:
+                break
+    
+
+        for i in alpha_no:
+            alpha.append(alpha_bets[i])
+         
+
+        return "".join(alpha[::-1])
+        
+
+
+
+
+        
