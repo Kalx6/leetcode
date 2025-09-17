@@ -1,0 +1,23 @@
+class Solution:
+    def titleToNumber(self, columnTitle: str) -> int:
+         value = 0
+         a = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 
+            'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 
+            'U', 'V', 'W', 'X', 'Y', 'Z']
+         flag = True
+
+         indx = 0
+
+         while flag:
+            tempo_value = (a.index(columnTitle[indx])+1)*26**(len(columnTitle)-indx-1)
+           
+
+            value += tempo_value
+            if indx == len(columnTitle)-1:
+                flag = False
+
+            indx += 1
+
+            
+         return value
+        
